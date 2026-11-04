@@ -8,10 +8,16 @@
       url = "git+https://ghfast.top/https://github.com/nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nur = {
+      url = "git+https://ghfast.top/https://github.com/nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    agenix.url = "git+https://ghfast.top/https://github.com/ryantm/agenix";
+    nixvim.url = "git+https://ghfast.top/https://github.com/nix-community/nixvim";
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+    { nixpkgs, home-manager, agenix, nur, nixvim, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -23,7 +29,12 @@
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [ ./home.nix ];
+        modules = [ 
+          nur.modules.homeManager.default
+          ./home.nix 
+          agenix.homeManagerModules.default
+          nixvim.homeModules.nixvim
+        ];
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix

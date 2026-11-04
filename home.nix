@@ -1,6 +1,16 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    ./config/editor
+    ./config/vcs
+    ./config/term
+    ./config/shell
+    ./config/dev
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "lorlike";
@@ -17,23 +27,17 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
+  home.packages = with pkgs; [
+    ragenix
+    trashy
+    nerd-fonts."jetbrains-mono"
+    uv
+    cachix
+    lazyjj
+    niri
+    nur.repos.lorlike.pigma
+    nur.repos.lorlike.arcana-world
+    apacheHttpd
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -67,23 +71,12 @@
   #
   #  /etc/profiles/per-user/lorlike/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    # EDITOR = "emacs";
-  };
 
+  age.secrets.apikey.file = ./secrets/apikey.age;
+  # 解密后路径：$XDG_RUNTIME_DIR/agenix/apikey
 
-  programs.git = {
-    enable = true;
-    settings = {
-      init.defaultBranch = "main";
-      user = {
-        name = "lorlike";
-        email = "lorlike.me@gmail.com";
-      };
-    };
-  };
+  targets.genericLinux.enable = true;
+  targets.genericLinux.gpu.enable = true;
 
-
-  # Let Home Manager install and manage itself.
-  # programs.home-manager.enable = true;
+  programs.home-manager.enable = true;
 }

@@ -1,5 +1,65 @@
 {
   "nodes": {
+    "agenix": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1792507013,
+        "narHash": "sha256-8tKjSQajD3mUND1GaAuaWTcuyUpgcGsh5V+l4ibzC7U=",
+        "ref": "refs/heads/main",
+        "rev": "5e5b88a0c8e56f291a108c2fe9934054d9745b2e",
+        "revCount": 387,
+        "type": "git",
+        "url": "https://ghfast.top/https://github.com/ryantm/agenix"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://ghfast.top/https://github.com/ryantm/agenix"
+      }
+    },
+    "flake-parts": {
+      "inputs": {
+        "nixpkgs-lib": [
+          "nixvim",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1790898470,
+        "narHash": "sha256-zTwuwezD0w3hpga6a6P8emidzAZFyWqlNeRBlpWOOl8=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "024633cd702b10285db5cb19b40ad48d2399ba60",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
+    "flake-parts_2": {
+      "inputs": {
+        "nixpkgs-lib": [
+          "nur",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1733312601,
+        "narHash": "sha256-4pDvzqnegAfRkPwO3wmwBhVi/Sye1mzps0zHWYnP88c=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "205b12d8b7cd4802fbcb8e8ef6a0f1408781a4f9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -7,11 +67,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790365885,
-        "narHash": "sha256-iQ0ebhiVo64NktTnwft9hNxlFu4j5cvljVxyJaEVIP4=",
+        "lastModified": 1792896866,
+        "narHash": "sha256-/0tELNnhdSnP+bHSdWiEe6KpfSwi6WrTnT9cm/jNkjA=",
         "ref": "refs/heads/master",
-        "rev": "7b4c5ec4bedaf1e062bbc1bcaeddbc6bd242aa1b",
-        "revCount": 7379,
+        "rev": "c216bf5a1f173b0481bd5c8c489ebe5595ecc68c",
+        "revCount": 7565,
         "type": "git",
         "url": "https://ghfast.top/https://github.com/nix-community/home-manager"
       },
@@ -22,10 +82,26 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1790323409,
-        "narHash": "sha256-VVTPf+Hyd5ebpjBMHmrLMSBIeW6ls48Bqtosj7CNKLA=",
+        "lastModified": 1790340521,
+        "narHash": "sha256-cRrWlIjVRJ6BHDr9caUdXsZ3owzWIKYHpNmGPHBInIU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "f5c082a40f7571c266e74e80ae2e68aadd8a9fc7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-26.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1792773339,
+        "narHash": "sha256-rZLrzrC6i+jnTAlvPZHogKDulY7WWDEv9hJeHieO7Zw=",
         "ref": "nixos-unstable",
-        "rev": "e94cb152ed51bd6e24eb4a41f1460252beb52cd2",
+        "rev": "3ec636362e1816bc2f0888fa0fa2c69f1bc9e504",
         "shallow": true,
         "type": "git",
         "url": "https://mirrors.tuna.tsinghua.edu.cn/git/nixpkgs.git"
@@ -37,10 +113,87 @@
         "url": "https://mirrors.tuna.tsinghua.edu.cn/git/nixpkgs.git"
       }
     },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1791487292,
+        "narHash": "sha256-tqM7xDEsaeK1p6VvRygeZ9LkQRpUUkbRT02BHv6hnTM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "8edc0c72e3a38faf5434e40d1f19431125fe4b30",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixvim": {
+      "inputs": {
+        "flake-parts": "flake-parts",
+        "nixpkgs": "nixpkgs_3",
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1792203519,
+        "narHash": "sha256-yJ072hxngo/srNdLTp4BlFeo0hedwnKicI3TGlSXLFE=",
+        "ref": "refs/heads/main",
+        "rev": "453dc9c5037e6d1bec81d2a51ddacd58a2f44e9c",
+        "revCount": 4779,
+        "type": "git",
+        "url": "https://ghfast.top/https://github.com/nix-community/nixvim"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://ghfast.top/https://github.com/nix-community/nixvim"
+      }
+    },
+    "nur": {
+      "inputs": {
+        "flake-parts": "flake-parts_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793367560,
+        "narHash": "sha256-qOdHBbIy1AhQAGOWmrB+VsbLyJPsKWsfZxTyCKWSohI=",
+        "ref": "refs/heads/main",
+        "rev": "bd07360224b899948f8b7154787a473ce5b7ce9d",
+        "revCount": 53316,
+        "type": "git",
+        "url": "https://ghfast.top/https://github.com/nix-community/NUR"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://ghfast.top/https://github.com/nix-community/NUR"
+      }
+    },
     "root": {
       "inputs": {
+        "agenix": "agenix",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs_2",
+        "nixvim": "nixvim",
+        "nur": "nur"
+      }
+    },
+    "systems": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1791244623,
+        "narHash": "sha256-uuanbkFk8a313Zfrxdcz8Us/yQtaxNnKJtX8v0ZPpd8=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "d36eeed142f88b5a636f2e3856a53c61654cf29b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "ref": "future-26.11",
+        "repo": "default",
+        "type": "github"
       }
     }
   },
