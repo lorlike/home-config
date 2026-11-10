@@ -37,6 +37,7 @@
     niri
     nur.repos.lorlike.pigma
     nur.repos.lorlike.arcana-world
+    nur.repos.lorlike.sqlmux
     apacheHttpd
   ];
 
