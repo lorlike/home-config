@@ -22,22 +22,24 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       username = "lorlike";
+
+      # 所有主机共用的模块
+      commonModules = [
+        nur.modules.homeManager.default
+        agenix.homeManagerModules.default
+        nixvim.homeModules.nixvim
+      ];
+
+      mkHome = host: home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = commonModules ++ [ ./hosts/${host}.nix ];
+      };
     in
     {
-      homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+      # 桌面主机（带 GUI）：home-manager switch --flake .#lorlike
+      homeConfigurations."${username}" = mkHome "desktop";
 
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [ 
-          nur.modules.homeManager.default
-          ./home.nix 
-          agenix.homeManagerModules.default
-          nixvim.homeModules.nixvim
-        ];
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
-      };
+      # 服务器主机（纯 CLI）：home-manager switch --flake .#lorlike-server
+      homeConfigurations."${username}-server" = mkHome "server";
     };
 }
