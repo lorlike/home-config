@@ -1,5 +1,4 @@
-{pkgs,...}:
-{
+{pkgs, ...}: {
   imports = [
     ./starship.nix
     ./zsh
@@ -7,8 +6,7 @@
     ./yazi
     ./zoxide.nix
   ];
-    home.packages = with pkgs; [
-      fzf
+  home.packages = with pkgs; [
+    fzf
   ];
-
 }

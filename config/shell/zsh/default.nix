@@ -1,20 +1,15 @@
-{pkgs,...}:
-{
+{pkgs, ...}: {
   programs.zsh = {
     enable = true;
 
     defaultKeymap = "emacs";
 
     enableCompletion = true;
-    autosuggestion.enable = true;          # 自动建议
+    autosuggestion.enable = true; # 自动建议
     fastSyntaxHighlighting.enable = true;
-    historySubstringSearch.enable = true;   # 历史子串搜索
+    historySubstringSearch.enable = true; # 历史子串搜索
 
-    profileExtra = ''
-    if [[ -z "$DISPLAY" && "$(tty)" == "/dev/tty1" ]]; then
-      exec startx
-    fi
-    '';
+    # 注意：`exec startx`（桌面会话自动启动）在 config/desktop/ 里，服务器不导入。
 
     plugins = [
       {
@@ -39,7 +34,7 @@
     };
   };
 
-  home.packages = with pkgs;[
+  home.packages = with pkgs; [
     zsh-completions
     zsh-fzf-tab
   ];

@@ -1,4 +1,4 @@
-# wifi.fish — wifi 控制（对应 zsh/config/wifi.zsh）
+# wifi.fish — wifi 控制（对应 wifi.zsh）
 
 function wifi --description "wifi 控制：list / hotspot"
     switch "$argv[1]"

@@ -1,9 +1,8 @@
 {
   # 剪切复制
-  clipboard = {
-    register = "unnamedplus";
-    providers.wl-copy.enable = true;
-  };
+  # NOTE: 只设置寄存器；剪贴板 provider（wl-copy）依赖 Wayland session，
+  # 由桌面主机在 config/desktop/default.nix 里打开，服务器上不设。
+  clipboard.register = "unnamedplus";
 
   # NOTE: 开启这个配置，使得支持osc52的终端能够在ssh链接使用该neovim时可以将neovim的内容复制到系统剪切板中
   # 支持osc52的终端 Windows Terminal, kitty, wezterm, iTerm2, alacritty等

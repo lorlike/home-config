@@ -1,7 +1,5 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   imports = [
-    ./zed
     ./mise
   ];
   home.packages = with pkgs; [
