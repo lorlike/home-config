@@ -28,7 +28,6 @@
     uv
     cachix
     lazyjj
-    nur.repos.lorlike.sqlmux
     apacheHttpd
     asciinema
     fastfetch
