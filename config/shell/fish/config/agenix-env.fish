@@ -1,4 +1,5 @@
 # 把 agenix 解密的 dotenv 文件（apikey.age）导入 fish 环境变量。
+# 对应 zsh 侧的 `source $XDG_RUNTIME_DIR/agenix/apikey`。
 
 set -l __agenix_env_file "$XDG_RUNTIME_DIR/agenix/apikey"
 

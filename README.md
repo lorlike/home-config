@@ -13,7 +13,7 @@ hosts/
 config/
   editor/                 # helix / nixvim（纯 CLI，两台机器共用）
   vcs/                    # git / jj / delta
-  shell/                  # fish / starship / zoxide / yazi
+  shell/                  # zsh / fish / starship / zoxide / yazi
   dev/                    # mise（+ zed 已移到 desktop）
   desktop/                # ★ 只在有图形界面的机器上导入
     default.nix           #   niri、字体、pigma、arcana-world、genericLinux.gpu
@@ -52,7 +52,7 @@ home-manager switch --flake ~/.config/home-manager#lorlike-server
 
 服务器端实际装出的包（`nix eval` 验证过）：apache-httpd、asciinema、cachix、
 delta、direnv、fastfetch、fish、fzf、git、helix、jujutsu、lazyjj、minikube、
-mise、ragenix、starship、trashy、uv、wrk、yazi、fish…
+mise、nixvim、ragenix、sqlmux、starship、trashy、uv、wrk、yazi、zsh…
 没有 niri / kitty / alacritty / zed-editor / pigma / arcana-world / 字体 /
 non-nixos-gpu。
 
