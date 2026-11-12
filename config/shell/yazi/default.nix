@@ -2,7 +2,6 @@
 {
   programs.yazi = {
     enable = true;
-    enableZshIntegration = true;
     shellWrapperName = "ra"; 
     initLua = ./init.lua;
     plugins = {

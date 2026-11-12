@@ -1,4 +1,4 @@
-# touchpad.fish — 触摸板开关（对应 touchpad.zsh）
+# touchpad.fish — 触摸板开关
 
 function touchpad --description "切换触摸板开关（xinput）"
     set -l id (xinput | string match -r 'Touchpad.*id=(\d+)' | string replace -r '.*id=(\d+)' '$1' | head -n1)

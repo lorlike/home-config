@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   imports = [
     ./starship.nix
-    ./zsh
     ./fish
     ./yazi
     ./zoxide.nix
