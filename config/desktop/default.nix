@@ -15,6 +15,7 @@
 
   home.packages = with pkgs; [
     niri # Wayland 合成器
+    flameshot # 截图/标注，Qt6 + qtwayland
     nur.repos.lorlike.pigma # 网易云 TUI，但需要声卡
     nur.repos.lorlike.arcana-world # TUI + TTS，链接 ALSA
     nerd-fonts."jetbrains-mono" # 终端/编辑器图标字体
